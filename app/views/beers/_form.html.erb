@@ -1,0 +1,23 @@
+<%= simple_form_for @beer do |form| %>
+	<% if @beer.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@beer.errors.count, "error") %> prohibited this beer from being saved:</h2>
+			<ul>
+      		<% @beer.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<%= form.input :name,		as: :text %>
+	<%= form.association :brewer %>
+	<%= form.association :format %>
+	<%= form.input :price, 		as: :float %>
+	<%= form.association :style %>
+	<%= form.input :abv, 		as: :float %>
+	<%= form.input :note, 		as: :text %>
+	<%= form.association :location %>
+	<%= form.submit "Save", class: "btn btn-large btn-primary" %>
+
+<% end %>

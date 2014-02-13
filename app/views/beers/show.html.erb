@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Beer name:</strong>
+  <%= @beer.name %>
+</p>
+
+<p>
+  <strong>Brewer:</strong>
+  <%= @beer.brewer.name %>
+</p>
+
+<p>
+  <strong>Beer format:</strong>
+  <%= @beer.format.name %>
+</p>
+
+<p>
+  <strong>Beer price:</strong>
+  <%= number_to_currency(@beer.price, precision: 2) %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @beer.style.name %>
+</p>
+
+<p>
+  <strong>Beer abv:</strong>
+  <%= number_to_percentage(@beer.abv, precision: 1) %>
+</p>
+
+<p>
+  <strong>Beer note:</strong>
+  <%= @beer.note %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @beer.location.name %>
+</p>
+
+<%= link_to 'Edit', edit_beer_path(@beer) %> |
+<%= link_to 'Back', beers_path %>

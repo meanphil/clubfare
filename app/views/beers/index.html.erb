@@ -1,0 +1,48 @@
+<h1>Listing beers</h1>
+
+<% if ! signed_in? %>
+
+<h1> YOU ARE NOT SIGNED IN! </h1>
+
+<% else %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Beer name</th>
+      <th>Brewer</th>
+      <th>Beer format</th>
+      <th>Beer price</th>
+      <th>Style</th>
+      <th>Beer abv</th>
+      <th>Beer note</th>
+      <th>Location</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beers.each do |beer| %>
+      <tr>
+        <td><%= beer.name %></td>
+        <td><%= beer.brewer.name %></td>
+        <td><%= beer.format.name %></td>
+        <td><%= beer.price %></td>
+        <td><%= beer.style.name %></td>
+        <td><%= beer.abv %></td>
+        <td><%= beer.note %></td>
+        <td><%= beer.location.name %></td>
+        <td><%= link_to 'Show', beer %></td>
+        <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
+        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Beer', new_beer_path %>
+<% end %>
