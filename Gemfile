@@ -38,3 +38,6 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use simple_form
 gem 'simple_form', '~> 3.0.1'
+
+# Use Capistrano for deployment
+gem 'rvm-capistrano', group: :development
