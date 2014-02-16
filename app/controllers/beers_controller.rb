@@ -44,7 +44,6 @@ class BeersController < ApplicationController
 	end
 
 	def dash
-#		@beers = Beer.where("location_id BETWEEN 6 AND 8").order("location_id ASC")
 		@beers = Beer.joins(:location).where(locations: { status: ['NEXT','LOW','SERVING'] }).order(:location_id)
 	end
 

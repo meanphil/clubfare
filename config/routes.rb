@@ -5,4 +5,6 @@ Clubfare::Application.routes.draw do
 	match '/dash',		to: 'beers#dash',			via: 'get'
 	match '/signin',	to: 'sessions#new',			via: 'get'
 	match '/signout',	to: 'sessions#destroy',		via: 'delete'
+	match '/api',		to: 'api#index',			via: 'get'
+	match '/api/beers',	to: 'api#beers',			via: 'get'
 end
