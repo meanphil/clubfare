@@ -1,4 +1,4 @@
-<%= simple_form_for @beer do |form| %>
+<%= simple_form_for @beer do |f| %>
 	<% if @beer.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@beer.errors.count, "error") %> prohibited this beer from being saved:</h2>
@@ -10,14 +10,14 @@
 		</div>
 	<% end %>
 
-	<%= form.input :name,		as: :text %>
-	<%= form.association :brewer %>
-	<%= form.association :format %>
-	<%= form.input :price, 		as: :float %>
-	<%= form.association :style %>
-	<%= form.input :abv, 		as: :float %>
-	<%= form.input :note, 		as: :text %>
-	<%= form.association :location %>
-	<%= form.submit "Save", class: "btn btn-large btn-primary" %>
+	<%= f.input :name,		as: :text %>
+	<%= f.association :brewer %>
+	<%= f.association :format %>
+	<%= f.input :price, 		as: :float %>
+	<%= f.association :style %>
+	<%= f.input :abv, 		as: :float %>
+	<%= f.input :note, 		as: :text %>
+	<%= f.association :location %>
+	<%= f.submit "Save", class: "btn btn-large btn-primary" %>
 
 <% end %>

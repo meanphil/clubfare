@@ -37,7 +37,7 @@ body {
 
 
 #beer-list ul {
-	width: 50%;
+	width: 100%;
 	display: block;
 	list-style: none;
 	float: left;
