@@ -1,8 +1,6 @@
-<h1>Listing beers</h1>
-
 <% if ! signed_in? %>
 
-<h1> YOU ARE NOT SIGNED IN! </h1>
+<h1>Signin required. Please <%= link_to 'sign in', signin_path %> first.</h1>
 
 <% else %>
 
@@ -34,9 +32,9 @@
         <td><%= beer.abv %></td>
         <td><%= beer.note %></td>
         <td><%= beer.location.name %></td>
-        <td><%= link_to 'Show', beer %></td>
+        <td><%= link_to 'Details', beer %></td>
         <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
-        <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

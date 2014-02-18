@@ -1,2 +1,2 @@
 collection @beers
-attributes :brewer_name, :name, :price, :currently
+attributes :brewer_name, :name, :price, :currently, :tapmarkup, :offmarkup
