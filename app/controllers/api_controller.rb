@@ -1,11 +1,4 @@
-class ApiController < ApplicationController
-
-	def index
-	end
-
-	def beers
-		@beers = Beer.ontap
-		render :json=>@beers, :except => :id
-	end
-
+class ApiController < ActionController::Base
+	# Don't inherit from ApplicationController, we don't want sessions
+   # nor do we need CSRF protection
 end
